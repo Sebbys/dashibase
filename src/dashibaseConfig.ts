@@ -1,29 +1,30 @@
-import { Page, Attribute, AttributeType, Config, Trigger } from './utils/config'
+import { Page, Attribute, AttributeType, Config, Trigger } from './utils/config';
 
 // Change this to build your own dashboard - see `utils/config.ts` for documentation
 
-const DASHIBASE_CONFIG:Config = {
-  name: "My Dashboard",
-  supabase_url: "https://YOUR_SUPABASE_URL.supabase.co",
-  supabase_anon_key: "YOUR_SUPABASE_ANON_KEY",
+const DASHIBASE_CONFIG: Config = {
+  name: 'My Dashboard',
+  supabase_url: 'https://jbwalhwyvyttpxbjwmsc.supabase.co',
+  supabase_anon_key:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impid2FsaHd5dnl0dHB4Ymp3bXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzM2OTA4MTEsImV4cCI6MTk4OTI2NjgxMX0.wcfkvGJWio911LRUmz4eHzmp6NM5yxxe36ARnLit7Q8',
   pages: [
     {
-      name: "My Page",
-      page_id: "my_page",
-      table_id: "my_table",
-      mode: "list",
+      name: 'My Page',
+      page_id: 'my_page',
+      table_id: 'my_table',
+      mode: 'list',
       attributes: [
         {
-          id: "value",
-          label: "Value",
+          id: 'value',
+          label: 'Value',
           required: false,
           readonly: false,
           type: AttributeType.Text,
         },
         {
           // Enum example - this will generate a dropdown with the provided options
-          id: "foo",
-          label: "Foo",
+          id: 'foo',
+          label: 'Foo',
           required: false,
           readonly: false,
           type: AttributeType.Enum,
@@ -33,8 +34,8 @@ const DASHIBASE_CONFIG:Config = {
           // Join example - for showing joined data from other tables
           // This will also work with tables joined via join tables
           // TODO: Add clearer documentation and examples
-          id: "foreign_table(foreign_table_col)",
-          label: "Join Example",
+          id: 'foreign_table(foreign_table_col)',
+          label: 'Join Example',
           required: false,
           readonly: false,
           type: AttributeType.Join,
@@ -46,11 +47,11 @@ const DASHIBASE_CONFIG:Config = {
       triggers: [
         {
           label: 'My Action',
-          code: 'alert(user.email)'
-        }
-      ] as Trigger[]
+          code: 'alert(user.email)',
+        },
+      ] as Trigger[],
     },
   ] as Page[],
-}
+};
 
-export default DASHIBASE_CONFIG
+export default DASHIBASE_CONFIG;
